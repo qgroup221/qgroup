@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>量子计算与量子信息课题组</title>
+  <meta name="description" content="某大学量子计算与量子信息课题组。研究方向包括量子算法、量子纠错、量子安全与量子软件。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1f4b99',
+            ink: '#1f2937',
+            paper: '#f7f7f7'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'Segoe UI', 'Helvetica Neue', 'Arial', 'Noto Sans SC', 'sans-serif'],
+            serif: ['Noto Serif SC', 'STSong', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    /* 更克制的视觉：少量圆角、弱阴影、无大幅动画 */
+    .card { border: 1px solid #e5e7eb; border-radius: .5rem; background: #fff; }
+    .nav-link { color: #374151; }
+    .nav-link:hover { color: #1f4b99; }
+    .section-title { font-family: 'Noto Serif SC', serif; }
+  </style>
+</head>
+<body class="text-ink bg-white">
+  <!-- 顶部导航（简洁无渐变/玻璃效果） -->
+  <header class="sticky top-0 z-40 bg-white/95 border-b border-gray-200">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="flex items-center justify-between h-14">
+        <a href="#home" class="font-semibold text-primary">量子计算与量子信息课题组</a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a class="nav-link" href="#about">概况</a>
+          <a class="nav-link" href="#research">研究</a>
+          <a class="nav-link" href="#members">成员</a>
+          <a class="nav-link" href="#publications">论文</a>
+          <a class="nav-link" href="#news">动态</a>
+          <a class="nav-link" href="#contact">联系</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden text-gray-700" aria-label="打开菜单">菜单</button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200">
+      <div class="mx-auto max-w-6xl px-4 py-2 space-y-2 text-sm">
+        <a class="block nav-link" href="#about">概况</a>
+        <a class="block nav-link" href="#research">研究</a>
+        <a class="block nav-link" href="#members">成员</a>
+        <a class="block nav-link" href="#publications">论文</a>
+        <a class="block nav-link" href="#news">动态</a>
+        <a class="block nav-link" href="#contact">联系</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero：去除大面积渐变/装饰，改为朴素介绍 -->
+  <section id="home" class="py-12 md:py-16 bg-paper border-b border-gray-200">
+    <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-3 gap-8 items-center">
+      <div class="md:col-span-2">
+        <h1 class="text-2xl md:text-3xl font-semibold section-title text-ink">量子计算与量子信息课题组</h1>
+        <p class="mt-3 text-gray-700 leading-relaxed">本课题组隶属于某大学理学院/计算机学院，聚焦量子算法、量子纠错与容错计算、量子安全与量子软件工程等方向。我们重视可复现性与开源，强调与实验团队的紧密协作。</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#research" class="inline-block px-4 py-2 text-white bg-primary rounded">研究方向</a>
+          <a href="#contact" class="inline-block px-4 py-2 border border-primary text-primary rounded">联系与招生</a>
+        </div>
+      </div>
+      <figure class="md:col-span-1">
+        <img class="w-full rounded" src="/static/lab.jpg" alt="实验室或板书照片（可替换为真实图片）" />
+        <figcaption class="mt-2 text-xs text-gray-500">图：实验室实景/组会白板记录（示意）。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 概况：删去夸张措辞，保留事实与口径 -->
+  <section id="about" class="py-12">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-xl md:text-2xl font-semibold section-title">课题组概况</h2>
+      <p class="mt-3 text-gray-700">成立于 2012 年。目前有教师 5 人，博士后 2 人，研究生若干。近五年承担国家/省部级项目若干项。我们倡导<strong>清晰问题定义、简明原型验证、开放数据/代码</strong>。</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="card p-5">
+          <h3 class="font-medium">研究理念</h3>
+          <p class="mt-2 text-sm text-gray-700">以可验证的技术路线解决受约束的实际问题，尽量公开算例、脚本与实验条件。</p>
+        </div>
+        <div class="card p-5">
+          <h3 class="font-medium">开放与合作</h3>
+          <p class="mt-2 text-sm text-gray-700">与国内外同行保持长期合作，欢迎共同开展可复现实验与交叉研究。</p>
+        </div>
+        <div class="card p-5">
+          <h3 class="font-medium">学生培养</h3>
+          <p class="mt-2 text-sm text-gray-700">强调阅读、复现与小步快跑。每月一次组内技术分享，鼓励在开源仓库沉淀文档。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 研究方向：简洁卡片，去掉“了解更多”营销口吻 -->
+  <section id="research" class="py-12 bg-paper border-y border-gray-200">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-xl md:text-2xl font-semibold section-title">研究方向</h2>
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="card p-5">
+          <h3 class="font-medium">量子算法与复杂性</h3>
+          <p class="mt-2 text-sm text-gray-700">变分算法、组合优化、量子行走；评估在受噪声限制设备（NISQ）上的可行性。</p>
+        </div>
+        <div class="card p-5">
+          <h3 class="font-medium">量子纠错与容错</h3>
+          <p class="mt-2 text-sm text-gray-700">表面码/LDPC 码、噪声表征与门级标定、容错门设计与资源估算。</p>
+        </div>
+        <div class="card p-5">
+          <h3 class="font-medium">量子安全与密码</h3>
+          <p class="mt-2 text-sm text-gray-700">QKD 协议分析、后量子密码实现与性能评测、量子网络安全模型。</p>
+        </div>
+        <div class="card p-5">
+          <h3 class="font-medium">量子模拟与量化</h3>
+          <p class="mt-2 text-sm text-gray-700">分子与材料模型的高效哈密顿量分解、误差—资源权衡。</p>
+        </div>
+        <div class="card p-5">
+          <h3 class="font-medium">量子软件工程</h3>
+          <p class="mt-2 text-sm text-gray-700">编译优化、基准测试、与经典调度器的混合策略；维护教学与实验仓库。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 成员：去掉过度修饰，保留必要字段 -->
+  <section id="members" class="py-12">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-xl md:text-2xl font-semibold section-title">成员</h2>
+      <p class="mt-3 text-gray-700">以下为主要成员（按姓氏拼音排序）。完整名单与联系方式见实验室公告。</p>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="card p-5">
+          <h3 class="font-medium">李明 教授</h3>
+          <p class="mt-1 text-sm text-gray-700">量子算法、量子模拟。邮箱：<a class="text-primary" href="mailto:li-ming@example.edu.cn">li-ming@example.edu.cn</a></p>
+        </article>
+        <article class="card p-5">
+          <h3 class="font-medium">张华 教授</h3>
+          <p class="mt-1 text-sm text-gray-700">超导量子比特、门级标定。邮箱：zhang-hua@example.edu.cn</p>
+        </article>
+        <article class="card p-5">
+          <h3 class="font-medium">王芳 副教授</h3>
+          <p class="mt-1 text-sm text-gray-700">量子纠错、资源估算。邮箱：wang-fang@example.edu.cn</p>
+        </article>
+        <article class="card p-5">
+          <h3 class="font-medium">刘强 副教授</h3>
+          <p class="mt-1 text-sm text-gray-700">量子安全、QKD。邮箱：liu-qiang@example.edu.cn</p>
+        </article>
+        <article class="card p-5">
+          <h3 class="font-medium">陈晓 副教授</h3>
+          <p class="mt-1 text-sm text-gray-700">量子软件、编译优化。邮箱：chen-xiao@example.edu.cn</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 论文：采用更学术的列举格式，避免“营销标签” -->
+  <section id="publications" class="py-12 bg-paper border-y border-gray-200">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-xl md:text-2xl font-semibold section-title">代表论文（近三年）</h2>
+      <ol class="mt-6 space-y-4 list-decimal list-inside text-sm text-gray-800">
+        <li>
+          Wang F., Li M., Zhang H., Liu Q. "Fault-tolerant design with surface/LDPC codes", <em>Phys. Rev. Lett.</em>, 2023, 130(5): 050501. 代码与数据：<a class="text-primary" href="#">repo</a>
+        </li>
+        <li>
+          Zhang H., Chen X., Li M., Wang F. "Dynamical decoupling for superconducting qubits", <em>Nat. Commun.</em>, 2023, 14: 2345. 实验脚本：<a class="text-primary" href="#">repo</a>
+        </li>
+        <li>
+          Li M., Chen X., Zhang H. "VQE for quantum chemistry", <em>Quantum Sci. Technol.</em>, 2023, 8(2): 025012. 结果复现：<a class="text-primary" href="#">repo</a>
+        </li>
+      </ol>
+      <p class="mt-4 text-sm text-gray-600">* 更多论文请见组内 Git 或 Google Scholar 链接。</p>
+    </div>
+  </section>
+
+  <!-- 动态：保持简洁，给出日期与事实 -->
+  <section id="news" class="py-12">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-xl md:text-2xl font-semibold section-title">近期动态</h2>
+      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="card p-5">
+          <time class="text-xs text-gray-500">2024-12-10</time>
+          <h3 class="mt-1 font-medium">某项目获批</h3>
+          <p class="mt-1 text-sm text-gray-700">“表面码容错关键技术”获得某基金立项。项目简介与路线图见内网文档。</p>
+        </article>
+        <article class="card p-5">
+          <time class="text-xs text-gray-500">2024-09-05</time>
+          <h3 class="mt-1 font-medium">开源工具发布</h3>
+          <p class="mt-1 text-sm text-gray-700">发布量子编译基准工具 v0.3。提供资源估算与回归测试脚本。</p>
+        </article>
+        <article class="card p-5">
+          <time class="text-xs text-gray-500">2024-06-18</time>
+          <h3 class="mt-1 font-medium">学术报告</h3>
+          <p class="mt-1 text-sm text-gray-700">邀请报告：Noise tailoring 与浅层电路的可行边界（Slides 已上传）。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系方式：表单字段减少，去除过度装饰 -->
+  <section id="contact" class="py-12 bg-paper border-t border-gray-200">
+    <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 class="text-xl md:text-2xl font-semibold section-title">联系与招生</h2>
+        <p class="mt-3 text-gray-700">欢迎具有物理、数学、计算机背景的同学与我们交流。请附上简历（含课程/代码链接）。</p>
+        <div class="card p-5 mt-4">
+          <p class="text-sm text-gray-700">地址：北京市海淀区中关村南大街 5 号（示例）</p>
+          <p class="text-sm text-gray-700 mt-1">邮箱：quantum@example.edu.cn</p>
+          <p class="text-sm text-gray-700 mt-1">办公时间：工作日 9:00–18:00</p>
+        </div>
+      </div>
+      <form class="card p-5" onsubmit="event.preventDefault(); alert('已收到。');">
+        <label class="block text-sm text-gray-700">姓名
+          <input class="mt-1 w-full border border-gray-300 rounded px-3 py-2" type="text" required />
+        </label>
+        <label class="block text-sm text-gray-700 mt-4">邮箱
+          <input class="mt-1 w-full border border-gray-300 rounded px-3 py-2" type="email" required />
+        </label>
+        <label class="block text-sm text-gray-700 mt-4">信息
+          <textarea class="mt-1 w-full border border-gray-300 rounded px-3 py-2" rows="5" required></textarea>
+        </label>
+        <button class="mt-4 inline-block px-4 py-2 text-white bg-primary rounded" type="submit">发送</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="py-10 border-t border-gray-200 text-sm text-gray-600">
+    <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div>© 2025 量子计算与量子信息课题组</div>
+      <div class="flex gap-4">
+        <a class="hover:text-primary" href="#publications">论文</a>
+        <a class="hover:text-primary" href="#news">动态</a>
+        <a class="hover:text-primary" href="#contact">联系</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn && menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+  </script>
+</body>
+</html>
