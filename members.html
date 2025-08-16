@@ -23,16 +23,16 @@
     html { scroll-behavior: smooth }
     .card { border: 1px solid #e5e7eb; border-radius: .5rem; background: #fff; }
     .section-title { font-family: 'Noto Serif SC', serif; }
-    .badge { border: 1px solid #e5e7eb; border-radius: 9999px; padding: .125rem .5rem; font-size: .75rem; }
     .shadow-soft { box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .badge { border: 1px solid #e5e7eb; border-radius: 9999px; padding: .125rem .5rem; font-size: .75rem; }
   </style>
 </head>
 <body class="bg-white text-ink">
-  <!-- 顶部导航（与首页口径一致） -->
+  <!-- 顶部导航 -->
   <header class="sticky top-0 z-40 bg-white/95 border-b border-gray-200">
     <div class="mx-auto max-w-6xl px-4">
       <div class="flex items-center justify-between h-14">
-        <a href="index.html#home" class="font-semibold text-primary">量子计算与量子信息课题组</a>
+        <a href="index.html#home" class="font-semibold text-primary">量子光学与量子计算课题组</a>
         <nav class="hidden md:flex items-center gap-6 text-sm">
           <a class="hover:text-primary" href="index.html#about">概况</a>
           <a class="hover:text-primary" href="index.html#research">研究</a>
@@ -50,17 +50,8 @@
   <section class="py-10 border-b border-gray-200 bg-paper">
     <div class="mx-auto max-w-6xl px-4">
       <h1 class="text-2xl md:text-3xl font-semibold section-title">全部成员</h1>
-      <p class="mt-2 text-gray-700 text-sm">点击卡片查看详细信息（照片、邮箱、研究方向等）。可按类别筛选与搜索。</p>
-      <div class="mt-4 flex flex-col md:flex-row gap-3 md:items-center">
-        <div class="flex flex-wrap gap-2" id="filterGroup">
-          <button class="badge" data-role="all">全部</button>
-          <button class="badge" data-role="教授">教授</button>
-          <button class="badge" data-role="副教授">副教授</button>
-          <button class="badge" data-role="博士后">博士后</button>
-          <button class="badge" data-role="博士生">博士生</button>
-          <button class="badge" data-role="硕士生">硕士生</button>
-          <button class="badge" data-role="校友">校友</button>
-        </div>
+      <div class="mt-3 flex flex-col md:flex-row gap-3 md:items-center">
+        <p class="text-gray-700 text-sm">点击卡片查看详细信息（照片、邮箱、研究方向等）。</p>
         <div class="md:ml-auto">
           <input id="searchInput" class="w-full md:w-72 border border-gray-300 rounded px-3 py-2 text-sm" placeholder="搜索姓名 / 方向关键词" />
         </div>
@@ -68,13 +59,14 @@
     </div>
   </section>
 
-  <!-- 成员网格：每个卡片带 data-*，点击后弹出模态框展示详情 -->
-  <main class="py-10">
+  <!-- 教授/副教授 -->
+  <section class="py-10">
     <div class="mx-auto max-w-6xl px-4">
-      <div id="memberGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- 教师 -->
-        <article class="card p-5 shadow-soft cursor-pointer" tabindex="0"
-          data-role="教授"
+      <h2 class="text-xl font-semibold mb-6 section-title">教授与副教授</h2>
+      <div id="grid-faculty" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 李明 -->
+        <article class="person-card card p-5 shadow-soft cursor-pointer" tabindex="0"
+          data-role="教师"
           data-name="李明"
           data-title="教授 / 博导"
           data-research="量子算法、量子模拟"
@@ -91,9 +83,9 @@
             </div>
           </div>
         </article>
-
-        <article class="card p-5 shadow-soft cursor-pointer" tabindex="0"
-          data-role="教授"
+        <!-- 张华 -->
+        <article class="person-card card p-5 shadow-soft cursor-pointer" tabindex="0"
+          data-role="教师"
           data-name="张华"
           data-title="教授 / 博导"
           data-research="超导量子比特、门级标定"
@@ -110,9 +102,9 @@
             </div>
           </div>
         </article>
-
-        <article class="card p-5 shadow-soft cursor-pointer" tabindex="0"
-          data-role="副教授"
+        <!-- 王芳 -->
+        <article class="person-card card p-5 shadow-soft cursor-pointer" tabindex="0"
+          data-role="教师"
           data-name="王芳"
           data-title="副教授 / 硕导"
           data-research="量子纠错、资源估算"
@@ -129,9 +121,9 @@
             </div>
           </div>
         </article>
-
-        <article class="card p-5 shadow-soft cursor-pointer" tabindex="0"
-          data-role="副教授"
+        <!-- 刘强 -->
+        <article class="person-card card p-5 shadow-soft cursor-pointer" tabindex="0"
+          data-role="教师"
           data-name="刘强"
           data-title="副教授 / 硕导"
           data-research="量子安全、QKD"
@@ -148,9 +140,9 @@
             </div>
           </div>
         </article>
-
-        <article class="card p-5 shadow-soft cursor-pointer" tabindex="0"
-          data-role="副教授"
+        <!-- 陈晓 -->
+        <article class="person-card card p-5 shadow-soft cursor-pointer" tabindex="0"
+          data-role="教师"
           data-name="陈晓"
           data-title="副教授 / 硕导"
           data-research="量子软件、编译优化"
@@ -167,9 +159,17 @@
             </div>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
 
-        <!-- 博士后/学生示例，可复制扩展 -->
-        <article class="card p-5 shadow-soft cursor-pointer" tabindex="0"
+  <!-- 博士后 -->
+  <section class="py-10 bg-paper">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-xl font-semibold mb-6 section-title">博士后</h2>
+      <div id="grid-postdoc" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 周宁 -->
+        <article class="person-card card p-5 shadow-soft cursor-pointer" tabindex="0"
           data-role="博士后"
           data-name="周宁"
           data-title="博士后"
@@ -187,9 +187,18 @@
             </div>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
 
-        <article class="card p-5 shadow-soft cursor-pointer" tabindex="0"
-          data-role="博士生"
+  <!-- 博士生与硕士生 -->
+  <section class="py-10">
+    <div class="mx-auto max-w-6xl px-4">
+      <h2 class="text-xl font-semibold mb-6 section-title">博士生与硕士生</h2>
+      <div id="grid-students" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- 高研 -->
+        <article class="person-card card p-5 shadow-soft cursor-pointer" tabindex="0"
+          data-role="学生"
           data-name="高研"
           data-title="博士生"
           data-research="LDPC 码与噪声模型"
@@ -206,9 +215,9 @@
             </div>
           </div>
         </article>
-
-        <article class="card p-5 shadow-soft cursor-pointer" tabindex="0"
-          data-role="硕士生"
+        <!-- 许涛 -->
+        <article class="person-card card p-5 shadow-soft cursor-pointer" tabindex="0"
+          data-role="学生"
           data-name="许涛"
           data-title="硕士生"
           data-research="量子编译与调度"
@@ -227,7 +236,7 @@
         </article>
       </div>
     </div>
-  </main>
+  </section>
 
   <!-- 模态框：复用同一个容器，点击不同卡片时动态填充内容 -->
   <div id="memberModal" class="fixed inset-0 z-50 hidden" aria-hidden="true">
@@ -260,7 +269,7 @@
 
   <footer class="py-10 border-t border-gray-200 text-sm text-gray-600 mt-12">
     <div class="mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-      <div>© 2025 量子计算与量子信息课题组</div>
+      <div>© 2025 量子光学与量子计算课题组</div>
       <div class="flex gap-4">
         <a class="hover:text-primary" href="index.html#publications">论文</a>
         <a class="hover:text-primary" href="index.html#news">动态</a>
@@ -270,36 +279,17 @@
   </footer>
 
   <script>
-    // 过滤与搜索
-    const buttons = document.querySelectorAll('#filterGroup .badge');
-    const grid = document.getElementById('memberGrid');
-    const cards = Array.from(grid.children);
+    // 搜索过滤（对全部栏目生效）
     const searchInput = document.getElementById('searchInput');
-
-    let currentRole = 'all';
-
-    function applyFilter() {
+    const cards = Array.from(document.querySelectorAll('.person-card'));
+    function applySearch(){
       const q = (searchInput?.value || '').trim().toLowerCase();
       cards.forEach(card => {
-        const role = card.getAttribute('data-role');
         const text = card.textContent.toLowerCase();
-        const roleMatch = (currentRole === 'all') || (role === currentRole);
-        const textMatch = q === '' || text.includes(q);
-        card.style.display = (roleMatch && textMatch) ? '' : 'none';
+        card.style.display = q === '' || text.includes(q) ? '' : 'none';
       });
     }
-
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        currentRole = btn.dataset.role;
-        buttons.forEach(b => b.classList.remove('bg-primary','text-white'));
-        btn.classList.add('bg-primary','text-white');
-        applyFilter();
-      });
-    });
-
-    searchInput?.addEventListener('input', applyFilter);
-    document.querySelector('[data-role="all"]').click();
+    searchInput?.addEventListener('input', applySearch);
 
     // 模态框逻辑
     const modal = document.getElementById('memberModal');
@@ -324,7 +314,7 @@
       mName.textContent = name;
       mTitle.textContent = title || '';
       mResearch.textContent = research || '';
-      mEmail.innerHTML = email ? `<a class="text-primary" href="mailto:${email}">${email}</a>` : '';
+      mEmail.innerHTML = email ? `<a class="text-primary" href="mailto:${email}">${email}</a>` : '—';
       mHome.innerHTML = homepage && homepage !== '#' ? `<a class="text-primary" href="${homepage}" target="_blank" rel="noopener">个人主页</a>` : '—';
       mBio.textContent = bio || '';
 
